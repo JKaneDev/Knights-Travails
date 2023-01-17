@@ -64,16 +64,29 @@ function createSquare(x, y) {
 
 function findShortestPath(start, finish) {
 	// clear visited map
+	visited.clear();
 	// pass start and end coords to createSquare
+	const origin = createSquare(...start);
+	const target = createSquare(...end);
 	// initialize queue with starting square
+	const queue = [origin];
 	// loop while target square is not in queue
-	// on each iteration:
-	// shift square at front of queue to variable
-	// create list of possible moves from current square
-	// set current square as prev square for each possible move
-	// add list of possible moves to queue
+	while (!queue.includes(target)) {
+		// shift square at front of queue to variable
+		const current = queue.shift();
+		// create list of possible moves from current square
+		const enqueue = current.createPossibleMoves();
+		// set current square as prev square for each possible move
+		enqueue.forEach((square) => square.setPrevSquare(current));
+		// add list of possible moves to queue
+		queue.push(...enqueue);
+	}
 	// initialize path containing finishing square
+	const path = [target];
 	// loop while path does not include origin square
-	// for each iteration:
-	// get prev square of each square starting from target square: add to front of path
+	while (!path.includes(origin)) {
+		// get prev square of each square starting from target square: add to front of path
+		const prevSquare = path[0].getPrevSquare();
+		path.unshift(prevSquare);
+	}
 }
