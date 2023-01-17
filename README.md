@@ -4,11 +4,11 @@ Calculating the shortest possible path for the knight in chess from one square t
 
 This code is a solution to the Knight's Travails problem, which is a problem where you are given a starting chess board position of a knight and a target position, and you have to find the shortest number of moves it would take for the knight to reach the target position.
 
-How it works
+## How it works
 
 The code uses a breadth-first search algorithm to explore all possible squares the knight can move to from the starting position. It uses two main functions: createSquare and findShortestPath.
 
-createSquare
+## createSquare
 
 The createSquare function takes in the x and y coordinates of a chess board square as arguments and returns an object representing that square. It also keeps track of all previously visited squares in a Map called visited.
 
