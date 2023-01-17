@@ -46,8 +46,20 @@ function createSquare(x, y) {
 	};
 
 	// if square already visited: return coords for this function call
-	// if not: add new square to visited map
+	if (visited.has(coords())) {
+		return visited.get(coords());
+	} else {
+		// if not: add new square to visited map
+		newSquare = {
+			name,
+			getPrevSquare,
+			setPrevSquare,
+			createPossibleMoves,
+		};
+		visited.set(coords(), newSquare);
+	}
 	// return new square for use in recursive call
+	return newSquare;
 }
 
 function findShortestPath(start, finish) {
