@@ -8,7 +8,7 @@ This code is a solution to the Knight's Travails problem, which is a problem whe
 
 The code uses a breadth-first search algorithm to explore all possible squares the knight can move to from the starting position. It uses two main functions: createSquare and findShortestPath.
 
-## createSquare
+## `createSquare`
 
 The createSquare function takes in the x and y coordinates of a chess board square as arguments and returns an object representing that square. It also keeps track of all previously visited squares in a Map called visited.
 
@@ -23,6 +23,8 @@ The square object has the following properties:
 `createPossibleMoves:` a function that returns an array of square objects representing all the squares the knight can move to from the current square
 
 The `createSquare` function also checks if the square has been previously visited by checking the visited Map. If it has, it returns the square object that is already in the Map. If it hasn't, it creates a new square object and adds it to the visited Map.
+
+## `find shortest path`
 
 The `findShortestPath` function takes in the starting and ending coordinates of the knight on the chess board as arguments. It first calls the `createSquare` function to create the origin and target square objects. It then initializes a queue with the origin square and loops while the target square is not in the queue.
 
