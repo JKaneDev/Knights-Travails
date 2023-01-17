@@ -89,4 +89,11 @@ function findShortestPath(start, finish) {
 		const prevSquare = path[0].getPrevSquare();
 		path.unshift(prevSquare);
 	}
+	console.log(
+		`The Shortest Path From Starting Square To Target Was ${
+			path.length - 1
+		} moves`
+	);
+	console.log(`Moves: `);
+	path.forEach((square) => console.log(square.coords()));
 }
