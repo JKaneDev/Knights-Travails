@@ -18,11 +18,11 @@ function createSquare(x, y) {
 	];
 
 	// set prev square
-	const setPrevSquare = () => prev;
-	// get prev square
-	const getPrevSquare = (newPrev) => {
+	const setPrevSquare = (newPrev) => {
 		prev = prev || newPrev;
 	};
+	// get prev square
+	const getPrevSquare = () => prev;
 
 	// variable: args square coords
 	const coords = () => `${x}, ${y}`;
